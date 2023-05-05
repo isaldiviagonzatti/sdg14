@@ -20,7 +20,7 @@ Output contains the analysed and summarised data and the generated plots
 
 * ICES Stock Assessment [stockAssesment](https://standardgraphs.ices.dk/stockList.aspx) 
 
-* TACs records by Carpenter, G. [recordTACs](https://griffincarpenter.org/reports/european-fishing-quotas-2001-2021/) 
+* TACs records by Carpenter, G. [RecordOfEuropeanTAC](https://griffincarpenter.org/reports/european-fishing-quotas-2001-2021/) 
 
 * ICES vs TAC database by Carpenter, G. [icesTACcomparison](https://neweconomics.org/campaigns/landing-the-blame) 
 
