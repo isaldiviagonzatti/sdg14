@@ -26,11 +26,11 @@ Output contains the analysed and summarised data and the generated plots
 
 * ICES Advice [adviceICES_Data_26_04_2023](https://asd.ices.dk/AdviceList)
 
-* Country-species catches Mediterranean [gfcm_capture_quantity](https://www.fao.org/fishery/statistics-query/en/gfcm_capture/gfcm_capture_quantity)
+* Country-species catches Mediterranean [gfcm_capture_quantity.csv](https://www.fao.org/fishery/statistics-query/en/gfcm_capture/gfcm_capture_quantity)
 
-* Eurostat Catches Med. & Black Sea [fish_ca_atl37_linear](https://ec.europa.eu/eurostat/databrowser/view/FISH_CA_ATL37/)
+* Eurostat Catches Med. & Black Sea [fish_ca_atl37_linear.csv](https://ec.europa.eu/eurostat/databrowser/view/FISH_CA_ATL37/)
 
-* Mediterranean Stock Assessment [stecf_species_values](https://stecf.jrc.ec.europa.eu/dd/medbs/stockassessment)
+* Mediterranean Stock Assessment [stecf_species_values.xlsx](https://stecf.jrc.ec.europa.eu/dd/medbs/stockassessment)
 
 * Advice STECF Med. & Black Sea [PDFs](https://stecf.jrc.ec.europa.eu/reports/medbs)
 
