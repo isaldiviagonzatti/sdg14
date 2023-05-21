@@ -17,6 +17,8 @@ Output contains the analysed and summarised data and the generated plots
 ## Data sources by indicator:
 (Description, <span style="color:#3366CC">name of data file with link to source</span>)
 
+* UNSD Goal 14 Official Data, [Goal14_raw](https://unstats.un.org/sdgs/dataportal/database) 
+
 * ICES Country-species catches, [OfficialNominalCatches](https://www.ices.dk/data/dataset-collections/Pages/Fish-catch-and-stock-assessment.aspx) 
 
 * ICES Stock Assessment, [stockAssesment](https://standardgraphs.ices.dk/stockList.aspx) 
@@ -34,8 +36,6 @@ Output contains the analysed and summarised data and the generated plots
 * Mediterranean Stock Assessment, [stecf_species_values.xlsx](https://stecf.jrc.ec.europa.eu/dd/medbs/stockassessment)
 
 * Advice STECF Med. & Black Sea, [PDFs](https://stecf.jrc.ec.europa.eu/reports/medbs)
-
-* UNSD Goal 14 Official Data, [Goal14_raw](https://unstats.un.org/sdgs/dataportal/database) 
 
 * Gross Nutrient Balance, [aei_pr_gnb](https://ec.europa.eu/eurostat/databrowser/view/AEI_PR_GNB__custom_153613/) 
 
@@ -62,6 +62,8 @@ Output contains the analysed and summarised data and the generated plots
 * Fossil CO2 emissions by country (territorial), [National_Fossil_Carbon_Emissions_2022v1](https://globalcarbonbudget.org/carbonbudget/) 
 
 * OHI Index, [scoresOHI](https://oceanhealthindex.org/global-scores/data-download/) 
+
+* National ocean science expenditure [archive14a1](https://unstats.un.org/sdgs/indicators/database/archive) (archive contains data for 2009-2012 period)
 
 ## Contributing
 
