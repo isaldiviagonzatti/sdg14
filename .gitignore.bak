@@ -3,6 +3,7 @@
 /cache
 /resources
 .bak
+.gitignore.bak
 
 AllData_Onward_20190329.csv
 
