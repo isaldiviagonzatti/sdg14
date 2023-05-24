@@ -1,5 +1,5 @@
-fishStock,Most recent assessment with corresponding report,Year,Catches (stockass),SAD,TAC,Catches (pdfs),done?,report,Landings
-spr.27.3a4,,2019,,138726,151940.0,,,,137499.0
-spr.27.3a4,,2020,,207807,207807.0,,,,181991.0
-spr.27.3a4,,2021,,106715,106715.0,,,,80196.0
-spr.27.3a4,,2022,,68690,,,,,
+fishStock,Most recent assessment with corresponding report,Year,Catches (stockass),SAD,TAC,Catches (pdfs),done?,report,Landings,SAD_landings
+spr.27.3a4,,2019-01-01,,138726,151940.0,,,,137499.0,
+spr.27.3a4,,2020-01-01,,207807,207807.0,,,,181991.0,
+spr.27.3a4,,2021-01-01,,106715,106715.0,,,,80196.0,
+spr.27.3a4,,2022-01-01,,68690,,,,,,
