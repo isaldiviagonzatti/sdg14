@@ -1,7 +1,5 @@
 .ipynb_checkpoints
 .DS_Store
-/cache
-/resources
 .bak
 
 AllData_Onward_20190329.csv
@@ -9,3 +7,6 @@ AllData_Onward_20190329.csv
 pdfsICES
 missingICESpdfs
 icesMissing
+
+/cache
+/resources
