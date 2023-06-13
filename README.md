@@ -15,13 +15,13 @@ Code contains the code to analyse the data
 Output contains the analysed and summarised data and the generated plots
 
 ## Data sources by indicator:
-(Description, <span style="color:#3366CC">name of data file with link to source</span>)
+(Description, <span style="color:#3366CC">name of data file/folder with link to source</span>)
 
 * UNSD Goal 14 Official Data, [Goal14_raw](https://unstats.un.org/sdgs/dataportal/database) 
 
-* ICES Country-species catches, [OfficialNominalCatches](https://www.ices.dk/data/dataset-collections/Pages/Fish-catch-and-stock-assessment.aspx) 
+* ICES Country-species catches, [/OfficialNominalCatches](https://www.ices.dk/data/dataset-collections/Pages/Fish-catch-and-stock-assessment.aspx) 
 
-* ICES Stock Assessment, [stockAssesment](https://standardgraphs.ices.dk/stockList.aspx) 
+* ICES Stock Assessment, [/stockAssesmentYEAR](https://standardgraphs.ices.dk/stockList.aspx) 
 
 * TACs records by Carpenter, G., [RecordOfEuropeanTAC](https://griffincarpenter.org/reports/european-fishing-quotas-2001-2021/) 
 
@@ -35,7 +35,7 @@ Output contains the analysed and summarised data and the generated plots
 
 * Mediterranean Stock Assessment, [stecf_species_values.xlsx](https://stecf.jrc.ec.europa.eu/dd/medbs/stockassessment)
 
-* Advice STECF Med. & Black Sea, [PDFs](https://stecf.jrc.ec.europa.eu/reports/medbs)
+* Advice STECF Med. & Black Sea, [/adviceSTECF](https://stecf.jrc.ec.europa.eu/reports/medbs)
 
 * Gross Nutrient Balance, [aei_pr_gnb](https://ec.europa.eu/eurostat/databrowser/view/AEI_PR_GNB__custom_153613/) 
 
@@ -63,7 +63,19 @@ Output contains the analysed and summarised data and the generated plots
 
 * OHI Index, [scoresOHI](https://oceanhealthindex.org/global-scores/data-download/) 
 
-* National ocean science expenditure [archive14a1](https://unstats.un.org/sdgs/indicators/database/archive) (archive contains data for 2009-2012 period)
+* National ocean science expenditure, [archive14a1.csv](https://unstats.un.org/sdgs/indicators/database/archive) (archive contains data for 2009-2012 period)
+
+* ESD allocations 2020, [esdAllocations2020.xml](https://ec.europa.eu/clima/ets/esdAllocations.do?languageCode=en&esdRegistry=-1&esdYear=&search=Search&currentSortSettings=)
+
+* ESD allocations 2030, [esdAllocations2030.xml](https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32020D2126)
+
+* Fish landings in USD, [fishLandingsOECD.csv](https://data.oecd.org/fish/fish-landings.htm)
+
+* Percentage of Fish Species Threatened OECD, [WILD_LIFE_10062023112434707.csv](https://stats.oecd.org/Index.aspx?DataSetCode=WILD_LIFE#)
+
+* IMO treaties participation, [/treatiesIMO](https://gisis.imo.org/Public/ST/Ratification.aspx?)
+
+* Current IMO participation [x-Status.xlsx](https://www.imo.org/en/About/Conventions/Pages/StatusOfConventions.aspx)
 
 ## Contributing
 
