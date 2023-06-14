@@ -77,6 +77,12 @@ Output contains the analysed and summarised data and the generated plots
 
 * Current IMO participation [x-Status.xlsx](https://www.imo.org/en/About/Conventions/Pages/StatusOfConventions.aspx)
 
+* Fish Subsidies, Sumaila et al.(2016)[subsidies2016Sumaila.xlsx](https://www.sciencedirect.com/science/article/abs/pii/S0308597X16000026#bib4) (Requested to the author via email)
+
+* Fish Subsidies, Sumaila et al.(2019) [subsidies2019Sumaila.csv](https://www.sciencedirect.com/science/article/pii/S2352340919310613)
+
+
+
 ## Contributing
 
 Pull requests are welcome. For major changes, please open an issue first
