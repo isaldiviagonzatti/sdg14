@@ -81,12 +81,13 @@ Output contains the analysed and summarised data and the generated plots
 
 * Fish Subsidies, Sumaila et al.(2019) [subsidies2019Sumaila.csv](https://www.sciencedirect.com/science/article/pii/S2352340919310613)
 
+* EEZ Area km2 [EMODnet_EEZ_v11_20210506](https://emodnet.ec.europa.eu/geonetwork/srv/eng/catalog.search#/metadata/d4a3fede-b0aa-485e-b4b2-77e8e3801fd0)
 
 
 ## Contributing
 
-Pull requests are welcome. For major changes, please open an issue first
-to discuss what you would like to change.
+Pull requests are welcome. For major changes, please first open an issue 
+to discuss it.
 
 ## License
 
