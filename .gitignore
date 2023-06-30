@@ -1,6 +1,7 @@
 .ipynb_checkpoints
 .DS_Store
 .bak
+__pycache__/
 
 AllData_Onward_20190329.csv
 
