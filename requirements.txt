@@ -1,0 +1,11 @@
+beautifulsoup4==4.12.2
+camelot==13.04.13-gpl-pyqt
+ipython==8.12.0
+matplotlib==3.7.1
+numpy==1.24.3
+pandas==1.5.3
+plotly==5.15.0
+PyPDF2==3.0.1
+Requests==2.31.0
+lxml==4.9.1
+openpyxl==3.0.10 
