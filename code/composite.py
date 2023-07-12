@@ -32,7 +32,7 @@ def compositeMC(df, years=[2012], simulations=10_000):
         # define seed to reproduce, random uniform elasticity, and number of simulations
         np.random.seed(8)
         elasticity = np.random.uniform(0, 1, simulations)
-        scoresGoal = pd.DataFrame(columns=["Country", "Year", "meanScore", "stdScore"])
+        scoresGoal = pd.DataFrame(columns=["Country", "Year", "scoreMean", "scoreStd"])
         # loop through all countries and years,
         # calculate the composite with different elasticity
         for year in years:

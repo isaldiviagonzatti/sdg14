@@ -86,6 +86,8 @@ Output contains the analysed and summarised data and the generated plots
 
 - Eutrophication [sdg_14_60_linear.csv](https://ec.europa.eu/eurostat/databrowser/view/sdg_14_60/default/table?lang=en)
 
+- Global Ocean Science Report data [gosr.csv](https://gosr.ioc-unesco.org/data)
+
 ## Contributing
 
 Pull requests are welcome. For major changes, please first open an issue
