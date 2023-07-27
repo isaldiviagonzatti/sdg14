@@ -88,6 +88,10 @@ Output contains the analysed and summarised data and the generated plots
 
 - Global Ocean Science Report data [gosr.csv](https://gosr.ioc-unesco.org/data)
 
+- Percentage of  Natura 2000 sites per EU Member State (to calculate EEZ) [n2k-cover-in-national-marine-waters.csv](https://www.eea.europa.eu/data-and-maps/daviz/n2k-cover-in-national-marine-waters/#tab-chart_2)
+
+- Natura 2000 data [](https://www.eea.europa.eu/data-and-maps/dashboards/natura-2000-barometer)
+
 ## Contributing
 
 Pull requests are welcome. For major changes, please first open an issue
