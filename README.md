@@ -16,7 +16,7 @@ Output contains the analysed and summarised data and the generated plots
 
 ## Data sources by indicator
 
-(Description, <span style="color:#3366CC">name of data file/folder with link to source</span>)
+(Description, <span style="color:#3366CC">name of data file/folder in `data` directory with url to source</span>)
 
 - UNSD Goal 14 Official Data, [Goal14_raw](https://unstats.un.org/sdgs/dataportal/database)
 
@@ -24,11 +24,15 @@ Output contains the analysed and summarised data and the generated plots
 
 - ICES Stock Assessment, [/stockAssesmentYEAR](https://standardgraphs.ices.dk/stockList.aspx)
 
+- ICES Advice PDFs, [stockAssessment["year"]](https://www.ices.dk/advice/Pages/Latest-Advice.aspx)
+
+- ICES Advice database, [database](https://asd.ices.dk/AdviceList)
+
+- Data on Fref, Bref, SAC, and TAC by ICES, compiled partially manually from the three previous sources: `ices_data.csv`
+
 - TACs records by Carpenter, G., [RecordOfEuropeanTAC](https://griffincarpenter.org/reports/european-fishing-quotas-2001-2021/)
 
 - ICES vs TAC database by Carpenter, G., [icesTACcomparison](https://neweconomics.org/campaigns/landing-the-blame)
-
-- ICES Advice, [adviceICES_Data_26_04_2023](https://asd.ices.dk/AdviceList)
 
 - Country-species catches Mediterranean, [gfcm_capture_quantity.csv](https://www.fao.org/fishery/statistics-query/en/gfcm_capture/gfcm_capture_quantity)
 
@@ -90,7 +94,9 @@ Output contains the analysed and summarised data and the generated plots
 
 - Percentage of  Natura 2000 sites per EU Member State (to calculate EEZ) [n2k-cover-in-national-marine-waters.csv](https://www.eea.europa.eu/data-and-maps/daviz/n2k-cover-in-national-marine-waters/#tab-chart_2)
 
-- Natura 2000 data [](https://www.eea.europa.eu/data-and-maps/dashboards/natura-2000-barometer)
+- Natura 2000 data [/natura2k](https://www.eea.europa.eu/data-and-maps/dashboards/natura-2000-barometer)
+
+- Habitat subgoal (OHI) [/habitatOHI](https://github.com/OHI-Science/ohi-global/tree/draft/yearly_results/global2022/Results/data)
 
 ## Contributing
 
