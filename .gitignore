@@ -3,8 +3,9 @@
 .bak
 __pycache__/
 
+# large files
+data/WDPA_Jul2023_Public_csv
 AllData_Onward_20190329.csv
-
 pdfsICES
 missingICESpdfs
 icesMissing
