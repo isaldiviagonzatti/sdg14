@@ -3,8 +3,13 @@ import pandas as pd
 
 
 def compositeDF(alpha, df, sigma):
-    # define the generalized mean function
-    # the function works with dataframe columns
+    """
+    This function calculates the composite for a given dataframe using the generalized mean
+    Each column of the dataframe is an indicator, each row is a country-year
+    alpha: the weight of each target
+    df: the dataframe with the targets
+    sigma: the elasticity value
+    """
     try:
         return (alpha * df ** ((sigma - 1) / sigma)).sum(axis=1) ** (
             sigma / (sigma - 1)

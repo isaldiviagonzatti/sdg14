@@ -98,6 +98,8 @@ Output contains the analysed and summarised data and the generated plots
 
 - Habitat subgoal (OHI) [/habitatOHI](https://github.com/OHI-Science/ohi-global/tree/draft/yearly_results/global2022/Results/data)
 
+- Comparative price levels [pppEurostat.csv](https://ec.europa.eu/eurostat/databrowser/view/TEC00120/default/table?lang=en)
+
 ## Contributing
 
 Pull requests are welcome. For major changes, please first open an issue
