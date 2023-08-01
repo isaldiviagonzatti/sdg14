@@ -100,6 +100,8 @@ Output contains the analysed and summarised data and the generated plots
 
 - Comparative price levels [pppEurostat.csv](https://ec.europa.eu/eurostat/databrowser/view/TEC00120/default/table?lang=en)
 
+- Nights spent at tourist accommodation establishments in coastal areas [nightsAccomoCoastal.csv](https://ec.europa.eu/eurostat/databrowser/view/TOUR_OCC_NIN2DC__custom_7065857/default/table?lang=en)
+
 ## Contributing
 
 Pull requests are welcome. For major changes, please first open an issue
