@@ -7,12 +7,12 @@ import numpy as np
 
 # define stock list
 fishStock = []
-for file in os.listdir("../dataTemp/icesPDFs"):
+for file in os.listdir("../dataTemp/icesAutoAnalysis/icesPDFs"):
     if file.endswith(".pdf"):
         fishStock.append(os.path.splitext(file)[0])
 
 extractedStock = []
-for file in os.listdir("../dataTemp/icesAdviceExtracted"):
+for file in os.listdir("../dataTemp/icesAutoAnalysis/icesAdviceExtracted"):
     if file.endswith(".csv"):
         extractedStock.append(os.path.splitext(file)[0])
 fishStock = [x for x in fishStock if x not in extractedStock]
@@ -20,7 +20,7 @@ fishStock = [x for x in fishStock if x not in extractedStock]
 
 def read_tables(pages, fish):
     tables = camelot.read_pdf(
-        "../dataTemp/icesPDFs/{}.pdf".format(fish),
+        "../dataTemp/icesAutoAnalysis/icesPDFs/{}.pdf".format(fish),
         pages=pages,
         backend="poppler",
         # flavor='stream',
@@ -38,7 +38,9 @@ notExtracted = []
 for fish in fishStock:
     print("Extracting", fish)
     # get page number in which Table 6 lies, and also get the next one as tables can span two oages
-    obj = PyPDF2.PdfFileReader("../dataTemp/icesPDFs/{}.pdf".format(fish))
+    obj = PyPDF2.PdfFileReader(
+        "../dataTemp/icesAutoAnalysis/icesPDFs/{}.pdf".format(fish)
+    )
 
     pgno = obj.getNumPages()
 
@@ -247,7 +249,9 @@ for fish in fishStock:
             print("All years have a specific SAD value")
     else:
         icesTable.set_index("fish", inplace=True)
-        icesTable.to_csv("../dataTemp/icesAdviceExtracted/{}.csv".format(fish))
+        icesTable.to_csv(
+            "../dataTemp/icesAutoAnalysis/icesAdviceExtracted/{}.csv".format(fish)
+        )
         print("ICES advice extracted for", fish)
         continue
     # add columns from excel and reorganize
@@ -274,19 +278,25 @@ for fish in fishStock:
         )
     except:
         icesTable.set_index("fish", inplace=True)
-        icesTable.to_csv("../dataTemp/icesAdviceExtracted/{}.csv".format(fish))
+        icesTable.to_csv(
+            "../dataTemp/icesAutoAnalysis/icesAdviceExtracted/{}.csv".format(fish)
+        )
         print("ICES advice without column format extracted for", fish)
         continue
 
     # icesTable = icesTable.replace('','N/A')
     excelTable.set_index("fish", inplace=True)
-    excelTable.to_csv("../dataTemp/icesAdviceExtracted/{}.csv".format(fish))
+    excelTable.to_csv(
+        "../dataTemp/icesAutoAnalysis/icesAdviceExtracted/{}.csv".format(fish)
+    )
     print("ICES advice extracted for", fish)
 
 if "spr.27.3a4bis" not in extractedStock:
     # sum of spr.27.3a and spr.27.4
-    spr4 = pd.read_csv("../dataTemp/icesAdviceExtracted/spr.27.4.csv")
-    spr3a = pd.read_csv("../dataTemp/icesAdviceExtracted/spr.27.3a.csv")
+    spr4 = pd.read_csv("../dataTemp/icesAutoAnalysis/icesAdviceExtracted/spr.27.4.csv")
+    spr3a = pd.read_csv(
+        "../dataTemp/icesAutoAnalysis/icesAdviceExtracted/spr.27.3a.csv"
+    )
     col_list = spr3a.columns.tolist()
     spr4, spr3a = (
         df.set_index(["Year"]).drop(columns=["fish"]) for df in [spr4, spr3a]
@@ -296,13 +306,16 @@ if "spr.27.3a4bis" not in extractedStock:
     spr3aHist["fish"] = "spr.27.3a4"
     spr3aHist.reset_index(inplace=True)
     spr3aHist = spr3aHist[col_list]
-    spr3aHist.to_csv("../dataTemp/icesAdviceExtracted/spr.27.3a4bis.csv", index=False)
+    spr3aHist.to_csv(
+        "../dataTemp/icesAutoAnalysis/icesAdviceExtracted/spr.27.3a4bis.csv",
+        index=False,
+    )
 
 # concat all the stock extracted
-listStock = os.listdir("../dataTemp/icesAdviceExtracted/")
-listStock = ["../dataTemp/icesAdviceExtracted/" + s for s in listStock]
+listStock = os.listdir("../dataTemp/icesAutoAnalysis/icesAdviceExtracted/")
+listStock = ["../dataTemp/icesAutoAnalysis/icesAdviceExtracted/" + s for s in listStock]
 allStock = pd.concat([pd.read_csv(f) for f in listStock])
-allStock.to_csv("../dataTemp/adviceExtracted.csv", index=False)
+allStock.to_csv("../dataTemp/icesAutoAnalysis/adviceExtracted.csv", index=False)
 
 notExtracted = pd.DataFrame(notExtracted, columns=["fish"])
-notExtracted.to_csv("../dataTemp/ICESnotExtracted.csv", index=False)
+notExtracted.to_csv("../dataTemp/icesAutoAnalysis/ICESnotExtracted.csv", index=False)

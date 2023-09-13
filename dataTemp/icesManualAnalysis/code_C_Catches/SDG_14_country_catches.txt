@@ -1,0 +1,92 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Wed May  3 14:41:30 2023
+
+@author: -
+"""
+import os
+import pandas as pd
+import numpy as np
+os.chdir("/files")
+os.getcwd()
+#file=os.chdir("/files/StockAssessmentGraphs_20234112023.csv")
+
+#df=pd.read_excel("/files/1_sdg_02_50_page_spreadsheet.xlsx", 
+#                 sheet_name="Sheet 1")
+c_catches=pd.read_csv("/files/ICESCatchDataset2006-2021.csv",decimal='.')
+
+
+#c=list(c_catches.columns)
+#print(c)
+
+c_catches["key"]=c_catches["Species"]+c_catches["Area"]
+
+catches_cols=['key','Species', 'Area', 'Units', 'Country', '2021']
+c_catches=c_catches[catches_cols]
+stockass_21=pd.read_csv("StockAssessmentGraphs_2021.csv")
+stockass_cols=['AssessmentKey', 'AssessmentYear', 'FishStock', 'StockDatabaseID', 
+               'StockKey', 'Purpose', 'Year','StockDescription', "ICES Areas (splited with character '~')", 
+               'SpeciesName', 'SGName', 'Report','StockSize','StockSizeDescription',
+               'Landings', 'OfficialLandings', 'Catches', 'Discards','FishingPressure',
+               'FishingPressureDescription', 'FishingPressureUnits','Flim', 'Fpa', 'Blim', 'Bpa', 'FMSY', 'MSYBtrigger']
+ICES_Areas=["27.1.a","27.1.b","27.1_NK","27.2_NK","27.2.a.1","27.2.a.2","27.2.a_NK","27.2.b.1","27.2.b.2","27.2.b_NK",
+            "27.3.a.20","27.3.a.21","27.3.a_NK","27.3_NK","27.3.b.23","27.3.c.22","27.3.d_NK","27.3.d.24","27.3.d.25",
+            "27.3.d.26","27.3.d.27","27.3.d.28_NK","27.3.d.29","27.3.d.30","27.3.d.31","27.3.d.32","27.3.d.28.1","27.3.d.28.2",
+            "27.4.a","27.4.b","27.4.c","27.4_NK","27.5_NK","27.5.a.1","27.5.a.2","27.5.a_NK","27.5.b.2","27.5.b_NK","27.5.b.1.a",
+            "27.5.b.1.b","27.5.b.1_NK","27.6.a","27.6.b_NK","27.6_NK","27.6.b.1","27.6.b.2","27.7.a","27.7.b","27.7.c.1","27.7.c.2",
+            "27.7.c_NK","27.7.d","27.7.e","27.7.f","27.7.g","27.7.h","27.7.j.1","27.7.j.2","27.7.j_NK","27.7.k.1","27.7.k.2","27.7.k_NK",
+            "27.8.a","27.8.b","27.8.c","27.8.d.1","27.8.d.2","27.8.d_NK","27.8.e.1","27.8.e.2","27.8.e_NK","27.8_NK","27.9.a","27.9_NK",
+            "27.9.b.1","27.9.b.2","27.9.b_NK","27.10.a.1","27.10.a.2","27.10.a_NK","27.10.b","27.10_NK","27.12.a.1","27.12.a.2","27.12.a.3",
+            "27.12.a.4","27.12.a_NK","27.12.b","27.12.c","27.12_NK","27.14.a","27.14.b.1","27.14.b.2","27.14.b_NK","27.14_NK","27_NK"]             
+
+c_catches = c_catches[c_catches['Area'].isin(ICES_Areas)]
+
+stockass_21=stockass_21[stockass_cols]
+stockass_20=stockass_21[(stockass_21["Year"]==2021)]
+stockass_20['key']=stockass_20["FishStock"].str.slice(stop=3).str.upper()
+key_catches_col = stockass_20.pop('key')
+stockass_20.insert(0, 'key', key_catches_col)
+stockass_20["ICES Areas (splited with character '~')"]=stockass_20["ICES Areas (splited with character '~')"].apply(lambda x: x.split("~") if isinstance(x, str) and "~" in x else [x])
+# # Explode the list of areas into separate rows
+stockass_20 = stockass_20.explode("ICES Areas (splited with character '~')")
+stockass_20["key"]=stockass_20["key"]+stockass_20["ICES Areas (splited with character '~')"].str.replace('\s+','',regex=True)
+# #merged_df=pd.merge(stockass_20["key_catches"],c_catches, left_on="key_catches", right_on="key")
+# #merged_df["key_catches"]=merged_df["key_catches"]+merged_df["Country"]
+# #merged_df=merged_df.groupby(["Country","key_catches"]).sum().reset_index()
+# c_catches.rename(columns = {'key':'key_catches'}, inplace = True)
+
+merged_df=pd.merge(stockass_20, c_catches, on = ['key'], how = 'outer')
+# #c=list(merged_df.columns)
+# #print(c)
+merged_cols=['FishStock','key', 'Country', '2021']
+merged_df=merged_df[merged_cols]
+# merged_df = merged_df.drop_duplicates(['key_catches', 'Country'])
+merged_df['2021'] = pd.to_numeric(merged_df['2021'], errors='coerce').fillna(0)
+
+
+df_grouped = merged_df.groupby(['FishStock', 'key', 'Country']).sum().reset_index()
+df_pivot = pd.pivot_table(df_grouped, values='2021', index=['FishStock', 'key'], columns=['Country'], aggfunc=np.sum, fill_value=0)
+
+df_pivot = df_pivot.reset_index().rename_axis(None, axis=1)
+# final_df=pd.merge(stockass_20,df_pivot,on=['FishStock'],how='outer')
+# create a new column 'Column3' with default value 'No'
+df_pivot['Yes, if single area included in several FishStocks'] = 'No'
+
+# group the data by Column2 and check if there are any duplicates
+for group_name, group_df in df_pivot.groupby('key'):
+    if len(group_df) > 1:
+        # update the 'Column3' value to 'contains duplicates'
+        df_pivot.loc[df_pivot['key'] == group_name, 'Yes, if single area included in several FishStocks'] = 'Yes'
+
+
+df_pivot_agg = pd.pivot_table(df_grouped, 
+                          values='2021', 
+                          index=['FishStock'], 
+                          columns=['Country'], 
+                          aggfunc=np.sum, 
+                          fill_value=0,
+                          margins=True)
+
+df_pivot.to_excel("catches_by_keys_21.xlsx")
+df_pivot_agg.to_excel("catches_by_stocks_21.xlsx")
