@@ -14,3 +14,5 @@ icesMissing
 /resources
 data/World_EEZ_v11_20191118_gpkg
 data/OceanSODA_ETHZ-v2023.OCADS.01_1982-2022.nc
+
+.env
