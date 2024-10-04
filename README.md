@@ -1,6 +1,6 @@
 # SDG 14 - Life below water, EU coastal states
 
-This is the repository for the paper Progress of EU coastal states against Sustainable Development Goal 14.
+This is the repository for the paper Strong versus weak sustainable development in the blue economy: a study of 15 EU coastal countries. [https://doi.org/10.1038/s44183-024-00082-6](https://doi.org/10.1038/s44183-024-00082-6)
 
 ## Usage
 
